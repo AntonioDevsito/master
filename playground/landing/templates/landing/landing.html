@@ -1,12 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>hola mundo</title>
-</head>
+{% extends 'base.html' %}
+
+{% block title %}
+    landing page
+{% endblock title %}
+
+
+{% block content %}
+    
+
+    
+    
 <body>
-    <h1>hola mundo desde template</h1>
-    <h2>jesus antonio tun cupul</h2>
+    
+    
+    {% if name == "Antonio"  %}
+        <h1>hola profe</h1>
+        <h2>Nombre:{{name| title}}</h2>
+    {% else %}
+        <h1>Hola invitado</h1>
+    {% endif %}
+    <p>edad: {{edad}}</p
+    
+        {% comment %} <h1>hola mundo desde template</h1>
+    <h2>Nombre: {{name|upper}}</h2>
+    <p>
+        edad: {{edad}}
+    </p> {% endcomment %}
+    
+    
+    
+    <p>fecha: {{today|date:"d/m/y"}} </p>
+    <p>stack de tecnologias</p>
+    <ul>
+        {% for tool in stack %}
+            <li><a href="{% url 'stack' tool.id  %}">{{tool.name}}</a></li>
+        {%empty%}
+            <li>no hay tecnologias disponibles</li>
+        {% endfor %}
+
+    </ul>
+    
+
 </body>
+{% endblock %}
 </html>
