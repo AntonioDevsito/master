@@ -26,10 +26,11 @@ def days_week(request, day):
     except:
         return HttpResponseNotFound("Frase no encontrada para e-l día especificado.")
 def index(request):
-    list_items=""
+   """  list_items=""
     days = list(days_of_week.keys())
     for day in days:
         day_path = reverse("day-quote",args=[day,])
         list_items+=f'<li><a href="{day_path}">{day.capitalize()}</a></li>'
     response_html=f"<ul>{list_items}</ul"
-    return HttpResponse(response_html)
+    return HttpResponse(response_html) """
+    

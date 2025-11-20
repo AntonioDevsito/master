@@ -1,0 +1,23 @@
+
+{% extends 'base.html' %}
+
+{% block title %}
+    dias page
+{% endblock title %}
+
+
+{% block content %}
+<body>
+    <p>Dias de la semana</p>
+    <ul>
+        
+        {% for day in list %}
+            <li><a href= "{% url 'day' day.frase %}">{{day.name}}</a></li>
+        {%empty%}
+                <li> no hay dias disponibles</li>
+        {% endfor %}
+            
+    </ul>
+</body>
+{% endblock %}
+</html>
