@@ -18,5 +18,5 @@ def days(request):
     })
 
 def days_detail(request,day):
-    return HttpResponse(f"Frase del dia: {day}")
+    return HttpResponse(f"<h3 style='background: #ececec; margin: 10px 0; padding: 12px; border-radius: 8px; transition: 0.3s;'>Frase del dia: {day}</h3>")
     

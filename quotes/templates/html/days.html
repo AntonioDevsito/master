@@ -5,21 +5,22 @@
 {% endblock %}
 
 {% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'styles.css' %}">
 
-
-
+<div class="container">
     <h2 class="banner-title">Días de la semana</h2>
 
 
-    <ul>
+    <ul class="day-list">
         {% for day in list %}
             <li>
                 <a href="{% url 'day' day.frase %}">{{ day.name }}</a>
             </li>
         {% empty %}
-            <li >No hay días disponibles</li>
+            <li class="empty">No hay días disponibles</li>
         {% endfor %}
     </ul>
-
+</div>
 
 {% endblock %}
