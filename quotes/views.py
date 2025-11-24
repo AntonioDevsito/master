@@ -13,7 +13,7 @@ def days(request):
         {"id":"saturday","name":"saturday","frase":"No esperes. El tiempo nunca será justo."},
         {"id":"sunday","name":"sunday","frase": "Cree que puedes y ya estás a mitad de camino."},
     ]
-    return render(request,"html/days.html",{
+    return render(request,"quotes/days.html",{
         "list":days_list,
     })
 

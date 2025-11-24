@@ -5,8 +5,9 @@
 {% endblock %}
 
 {% block content %}
-{% load static %}
-<link rel="stylesheet" href="{% static 'styles.css' %}">
+{% include './includes/partial.html' %}
+{% comment %} {% load static %}
+<link rel="stylesheet" href="{% static 'styles.css' %}"> {% endcomment %}
 
 <div class="container">
     <h2 class="banner-title">Días de la semana</h2>
@@ -22,5 +23,6 @@
         {% endfor %}
     </ul>
 </div>
+{% include './includes/endpartial.html' with day=list name="Antonio"%}
 
 {% endblock %}
