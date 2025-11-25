@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Días page
+{% endblock %}
+
+{% block content %}
+{% include '../includes/partial.html' %}
+{%block page_style%} 
+
+<link rel="stylesheet" href="{% static 'quotes/quotes_styles.css' %}"> 
+{%endblock page_style%}
+{% comment %} {% load static %}
+<link rel="stylesheet" href="{% static 'styles.css' %}">  {% endcomment %}
+
+<div class="container">
+    <h2 class="banner-title">Días de la semana</h2>
+
+
+    <ul class="day-list">
+        {% for day in list %}
+            <li>
+                <a href="{% url 'day' day.frase %}">{{ day.name }}</a>
+            </li>
+        {% empty %}
+            <li class="empty">No hay días disponibles</li>
+        {% endfor %}
+    </ul>
+</div>
+{% include '../includes/endpartial.html' with days=list  name="Antonio"%}
+
+{% endblock %}
